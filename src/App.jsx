@@ -1,7 +1,10 @@
 import About from './components/layout/About';
 import Hero from './components/layout/Hero'
 import Navbar from './components/layout/Navbar'
+import Services from './components/layout/Services';
 import Stats from './components/layout/Stats';
+import Portfolio from './components/layout/Portfolio';
+
 
 function App() {
   return (
@@ -10,6 +13,8 @@ function App() {
       <Hero />
       <Stats/>
       <About/>
+      <Services/>
+      <Portfolio/>
     </div>
   )
 }
