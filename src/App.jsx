@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar'
 import Services from './components/layout/Services';
 import Stats from './components/layout/Stats';
 import Portfolio from './components/layout/Portfolio';
+import Testimonial from './components/layout/Testimonial';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <About/>
       <Services/>
       <Portfolio/>
+      <Testimonial/>
     </div>
   )
 }
