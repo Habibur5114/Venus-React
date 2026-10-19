@@ -51,7 +51,7 @@ export default function Navbar() {
             <a href="#services" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Services</a>
             <a href="#portfolio" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Portfolio</a>
             
-            {/* Blog Hover Dropdown */}
+            
             <div className="relative group py-6">
               <button className="flex items-center gap-1 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer focus:outline-none">
                 <span>Blog</span>
