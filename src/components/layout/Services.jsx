@@ -2,7 +2,7 @@ import React from "react";
 
 const Services = () => {
   return (
-    <section className="bg-[#f8fafe] dark:bg-slate-900 py-20 px-4 font-sans transition-colors duration-300">
+    <section id="services" className="bg-[#f8fafe] dark:bg-slate-900 py-20 px-4 font-sans transition-colors duration-300">
       <div className="max-w-5xl mx-auto text-center">
         {/* Top Badge */}
         <div className="inline-flex items-center gap-2 mb-4">

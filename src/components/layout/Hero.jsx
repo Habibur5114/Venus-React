@@ -3,7 +3,7 @@ import habibImg from '../../assets/images/habib.jpg';
 
 export default function Hero() {
   return (
-    <section className="w-full py-12 md:py-20 lg:py-24 transition-colors duration-300">
+    <section id="hero" className="w-full py-12 md:py-20 lg:py-24 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           

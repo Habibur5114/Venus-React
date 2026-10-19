@@ -2,7 +2,7 @@ import React from "react";
 
 const Portfolio = () => {
   return (
-    <section className="bg-[#f8fafe] dark:bg-slate-900 py-24 px-6 md:px-12 font-sans overflow-hidden transition-colors duration-300">
+    <section id="portfolio" className="bg-[#f8fafe] dark:bg-slate-900 py-24 px-6 md:px-12 font-sans overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         {/* Top Badge */}
         <div className="flex justify-center items-center gap-2 mb-4">

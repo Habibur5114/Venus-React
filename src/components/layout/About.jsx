@@ -4,7 +4,7 @@ import prograss from '../../assets/images/progress-work.png';
 export default class About extends Component {
   render() {
     return (
-      <section className="w-full bg-white py-12 md:py-20 lg:py-24 dark:bg-slate-900 transition-colors duration-300">
+      <section id="about" className="w-full bg-white py-12 md:py-20 lg:py-24 dark:bg-slate-900 transition-colors duration-300">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
      
