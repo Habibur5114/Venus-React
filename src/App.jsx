@@ -7,6 +7,7 @@ import Portfolio from './components/layout/Portfolio';
 import Testimonial from './components/layout/Testimonial';
 import LatestBlogNews from './components/layout/LatestBlogNews';
 import Footer from './components/layout/Footer';
+import Navbar from './components/admin/layout/Navbar';
 
 function App() {
   return (
