@@ -47,6 +47,15 @@ export default class About extends Component {
                     <div className="bg-blue-600 dark:bg-blue-500 h-1.5 rounded-full" style={{ width: '95%' }}></div>
                   </div>
                 </div>
+                {/* <div className="space-y-2">
+                  <div className="flex justify-between text-xs sm:text-sm font-semibold text-gray-600 dark:text-slate-300">
+                    <span>UX Research and Testing</span>
+                    <span>95%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-blue-600 dark:bg-blue-500 h-1.5 rounded-full" style={{ width: '95%' }}></div>
+                  </div>
+                </div> */}
 
                 <div className="space-y-2">
                   <div className="flex justify-between text-xs sm:text-sm font-semibold text-gray-600 dark:text-slate-300">
