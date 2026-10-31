@@ -6,13 +6,16 @@ import {
   LayoutDashboard,
   LifeBuoy,
   MessageSquare,
+  Tags,
   Settings,
   Users,
   X,
 } from 'lucide-react';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const navigation = [
   { label: 'Overview', href: '#overview', icon: LayoutDashboard, active: true },
+  { label: 'Categories', href: '/admin/category', icon: Tags, route: true },
   { label: 'Analytics', href: '#analytics', icon: BarChart3 },
   { label: 'Projects', href: '#projects', icon: BriefcaseBusiness, badge: '8' },
   { label: 'Messages', href: '#messages', icon: MessageSquare, badge: '4' },
@@ -20,6 +23,9 @@ const navigation = [
 ];
 
 export default function Sidebar({ isCollapsed = false, isMobileOpen = false, onClose }) {
+  const { pathname } = useLocation();
+  const isCategoryPage = pathname === '/admin/category';
+
   return (
     <>
       {isMobileOpen && (
@@ -93,21 +99,18 @@ export default function Sidebar({ isCollapsed = false, isMobileOpen = false, onC
             WORKSPACE
           </p>
           <ul className="space-y-1">
-            {navigation.map(({ label, href, icon: Icon, active, badge }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  aria-current={active ? 'page' : undefined}
-                  title={isCollapsed ? label : undefined}
-                  onClick={onClose}
-                  className={`group flex min-h-11 items-center rounded-xl transition-colors ${
-                    isCollapsed ? 'md:justify-center md:px-2' : 'gap-3 px-3'
-                  } ${
-                    active
-                      ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-950/40'
-                      : 'text-slate-400 hover:bg-slate-900 hover:text-white'
-                  }`}
-                >
+            {navigation.map(({ label, href, icon: Icon, active, badge, route }) => {
+              const isActive = route ? isCategoryPage : active && !isCategoryPage;
+              const linkClassName = `group flex min-h-11 items-center rounded-xl transition-colors ${
+                isCollapsed ? 'md:justify-center md:px-2' : 'gap-3 px-3'
+              } ${
+                isActive
+                  ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-950/40'
+                  : 'text-slate-400 hover:bg-slate-900 hover:text-white'
+              }`;
+
+              const linkContent = (
+                <>
                   <Icon size={19} strokeWidth={1.8} className="shrink-0" aria-hidden="true" />
                   <span className={`flex-1 text-[13px] font-medium ${isCollapsed ? 'md:hidden' : ''}`}>
                     {label}
@@ -115,15 +118,42 @@ export default function Sidebar({ isCollapsed = false, isMobileOpen = false, onC
                   {badge && (
                     <span
                       className={`rounded-md px-2 py-0.5 text-[10px] font-semibold ${
-                        active ? 'bg-white/15 text-white' : 'bg-slate-800 text-slate-400'
+                        isActive ? 'bg-white/15 text-white' : 'bg-slate-800 text-slate-400'
                       } ${isCollapsed ? 'md:hidden' : ''}`}
                     >
                       {badge}
                     </span>
                   )}
-                </a>
+                </>
+              );
+
+              return (
+              <li key={label}>
+                {route ? (
+                  <NavLink
+                    to={href}
+                    end
+                    aria-current={isActive ? 'page' : undefined}
+                    title={isCollapsed ? label : undefined}
+                    onClick={onClose}
+                    className={linkClassName}
+                  >
+                    {linkContent}
+                  </NavLink>
+                ) : (
+                  <a
+                    href={href}
+                    aria-current={isActive ? 'page' : undefined}
+                    title={isCollapsed ? label : undefined}
+                    onClick={onClose}
+                    className={linkClassName}
+                  >
+                    {linkContent}
+                  </a>
+                )}
               </li>
-            ))}
+              );
+            })}
           </ul>
 
           <p

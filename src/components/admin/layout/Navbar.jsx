@@ -1,6 +1,6 @@
 import { Bell, ChevronDown, Menu, Search } from 'lucide-react';
 
-export default function Navbar({ onMenuClick }) {
+export default function Navbar({ onMenuClick, title = 'Dashboard' }) {
   return (
     <header className="sticky top-0 z-30 flex h-[76px] shrink-0 items-center justify-between border-b border-slate-200 bg-white/90 px-4 backdrop-blur sm:px-6 lg:px-8">
       <div className="flex min-w-0 items-center gap-3 sm:gap-5">
@@ -14,7 +14,7 @@ export default function Navbar({ onMenuClick }) {
         </button>
         <div className="min-w-0">
           <p className="hidden text-xs font-medium text-slate-400 sm:block">Workspace / Admin</p>
-          <h1 className="truncate text-lg font-semibold text-slate-900 sm:text-xl">Dashboard</h1>
+          <h1 className="truncate text-lg font-semibold text-slate-900 sm:text-xl">{title}</h1>
         </div>
       </div>
 
